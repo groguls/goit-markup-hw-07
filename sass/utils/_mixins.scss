@@ -1,0 +1,15 @@
+@mixin typography(
+  $fontWeight: 400,
+  $fontSize: 16px,
+  $lineHeight: 1.5,
+  $txtColor: $slate-text-color,
+  $txtAlign: center,
+  $letspace: 0.02em
+) {
+  font-weight: $fontWeight;
+  font-size: $fontSize;
+  line-height: $lineHeight;
+  color: $txtColor;
+  text-align: $txtAlign;
+  letter-spacing: $letspace;
+}

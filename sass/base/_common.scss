@@ -1,10 +1,8 @@
 body {
-  background-color: $main-color;
-  font-size: 16px;
   font-family: "Roboto", sans-serif;
-  line-height: 1.5;
-  color: var(--slate-text-color);
-  letter-spacing: 0.02em;
+
+  @include typography();
+  background-color: $main-color;
 }
 
 h1,
@@ -18,84 +16,8 @@ ul {
   margin: 0;
 }
 
-
-
-.link {
-  text-decoration: none;
-}
-
-.list {
-  display: flex;
-  gap: 24px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.section {
-  padding-top: 120px;
-  padding-bottom: 120px;
-}
-
-.section-caption {
-  margin-bottom: 72px;
-  font-size: var(--font-size-caption);
-  font-weight: var(--font-weight-caption);
-  line-height: 1.11;
-  color: var(--navyblue-dark-color);
-  text-align: center;
-  text-transform: capitalize;
-  letter-spacing: 0.02em;
-}
-
-.section-title {
-  font-size: var(--font-size-title);
-  font-weight: var(--font-weight-title);
-  line-height: 1.2;
-  color: var(--navyblue-dark-color);
-  letter-spacing: 0.02em;
-}
-
-.section-text {
-  font-size: 16px;
-  line-height: 1.5;
-  color: var(--slate-text-color);
-  letter-spacing: 0.02em;
-}
-
-.button {
-  background-color: var(--iris-brand-color);
-  cursor: pointer;
-  border: none;
-  border-radius: 4px;
-  font-size: 16px;
-  font-family: inherit;
-  font-weight: var(--font-weight-title);
-  line-height: 1.5;
-  color: var(--main-color);
-  letter-spacing: 0.04em;
-  transition: background-color var(--animation-delay) var(--animation-func);
-}
-
-.button:hover {
-  background-color: var(--ocean-pressed-color);
-}
-
-.main-button {
-  display: block;
-  margin: 0 auto;
-  padding: 16px 32px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-}
-
 .img-attribute {
   display: block;
   max-width: 100%;
   height: auto;
-}
-
-.container {
-  width: 1158px;
-  margin: 0 auto;
-  padding: 0 15px;
 }

@@ -1,0 +1,29 @@
+.features-list {
+  @extend %reset-list;
+  flex-direction: column;
+  gap: 72px;
+}
+
+@media screen and (min-width: $tablet) {
+  .features-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 72px 24px;
+  }
+
+  .features-item {
+    flex-basis: calc((100% - 24px) / 2);
+  }
+}
+
+@media screen and (min-width: $desktop) {
+  .features-list {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 24px;
+  }
+
+  .features-item {
+    flex-basis: calc((100% - 3 * 24px) / 4);
+  }
+}

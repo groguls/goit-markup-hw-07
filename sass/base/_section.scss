@@ -1,0 +1,60 @@
+.section {
+  padding-top: 96px;
+  padding-bottom: 96px;
+}
+
+.section-caption {
+  @include typography(
+    $font-weight-caption,
+    $font-size-caption,
+    1.11,
+    $navyblue-dark-color
+  );
+  margin-bottom: 72px;
+}
+
+.section-title {
+  @include typography(
+    $font-weight-caption,
+    $font-size-caption,
+    1.11,
+    $navyblue-dark-color
+  );
+  margin-bottom: 8px;
+}
+
+.section-text {
+  @include typography($fontWeight: $font-weight-title, $txtAlign: left);
+}
+
+@media screen and (min-width: $tablet) {
+  .section {
+    padding-top: 120px;
+    padding-bottom: 120px;
+  }
+
+  .section-title {
+    text-align: left;
+  }
+}
+
+@media screen and (min-width: $desktop) {
+  .section {
+    padding-top: 120px;
+    padding-bottom: 120px;
+  }
+
+  .section-title {
+    @include typography(
+      $font-weight-title,
+      $font-size-title,
+      1.2,
+      $navyblue-dark-color,
+      $txtAlign: left
+    );
+  }
+
+  .section-text {
+    @include typography($txtAlign: left);
+  }
+}
