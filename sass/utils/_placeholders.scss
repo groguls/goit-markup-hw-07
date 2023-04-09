@@ -9,7 +9,7 @@
   line-height: 1.5;
   color: $main-color;
   letter-spacing: 0.04em;
-  transition: background-color $animation-delay $animation-func;
+  @include animation();
 
   &:hover {
     background-color: $ocean-pressed-color;
@@ -25,4 +25,23 @@
   margin: 0;
   padding: 0;
   list-style: none;
+}
+
+%image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+%visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(100%);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  white-space: nowrap;
 }

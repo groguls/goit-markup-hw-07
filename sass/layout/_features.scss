@@ -25,5 +25,33 @@
 
   .features-item {
     flex-basis: calc((100% - 3 * 24px) / 4);
+
+    &::before {
+      content: "";
+      display: block;
+      height: 112px;
+      margin-bottom: 8px;
+      background: $cloud-light-color;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 64px 64px;
+      border-radius: 4px;
+    }
+
+    &:nth-child(1)::before {
+      background-image: url(../../images/antenna.svg);
+    }
+
+    &:nth-child(2)::before {
+      background-image: url(../../images/clock.svg);
+    }
+
+    &:nth-child(3)::before {
+      background-image: url(../../images/diagram.svg);
+    }
+
+    &:nth-child(4)::before {
+      background-image: url(../../images/astronaut.svg);
+    }
   }
 }

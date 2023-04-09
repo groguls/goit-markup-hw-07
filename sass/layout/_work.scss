@@ -1,7 +1,14 @@
+@media screen and (max-width: 1157px) {
+  .work {
+    display: none;
+  }
+}
+
 .work {
   padding-top: 0;
 }
 
 .work-list {
   @extend %reset-list;
+  gap: 24px;
 }

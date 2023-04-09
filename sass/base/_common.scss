@@ -16,6 +16,13 @@ ul {
   margin: 0;
 }
 
+.list {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
 .img-attribute {
   display: block;
   max-width: 100%;

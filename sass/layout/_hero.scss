@@ -66,7 +66,7 @@
   }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: $desktop) {
   .hero-section {
     max-width: $desktop;
     min-height: 600px;

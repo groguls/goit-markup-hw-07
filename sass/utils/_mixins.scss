@@ -1,3 +1,26 @@
+@mixin logo(
+  $fontWeight: 800,
+  $fontSize: 18px,
+  $lineHeight: 1.17,
+  $txtColor: $iris-brand-color,
+  $txtAlign: center,
+  $letspace: 0.03em,
+  $logoColor: $navyblue-dark-color
+) {
+  font-family: "Raleway", sans-serif;
+  font-weight: $fontWeight;
+  font-size: $fontSize;
+  line-height: $lineHeight;
+  color: $txtColor;
+  text-align: $txtAlign;
+  text-transform: uppercase;
+  letter-spacing: $letspace;
+
+  & .logo-text {
+    color: $logoColor;
+  }
+}
+
 @mixin typography(
   $fontWeight: 400,
   $fontSize: 16px,
@@ -12,4 +35,32 @@
   color: $txtColor;
   text-align: $txtAlign;
   letter-spacing: $letspace;
+}
+
+@mixin animation($style: background-color) {
+  transition: $style $animation-delay $animation-func;
+}
+
+@mixin social($size: 16px, $activeColor: $ocean-pressed-color) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background-color: $iris-brand-color;
+  border-radius: 50%;
+  color: $cloud-light-color;
+  @include animation();
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: $activeColor;
+  }
+
+  &-item {
+    fill: currentColor;
+    width: $size;
+    height: $size;
+  }
 }

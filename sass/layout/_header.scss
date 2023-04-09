@@ -1,0 +1,124 @@
+.header {
+  position: relative;
+  box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08);
+  border-bottom: 1px solid $cornflower-accent-color;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  text-align: left;
+}
+
+.logo {
+  display: inline-block;
+  //   padding-top: 24px;
+  //   padding-bottom: 22px;
+  @extend %reset-link;
+  @include logo($logoColor: $navyblue-dark-color);
+}
+
+.nav-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  //   position: absolute;
+  //   top: 24px;
+  //   right: 24px;
+  margin: 0;
+  padding: 24px 0;
+
+  stroke: $navyblue-dark-color;
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+
+  color: $navyblue-dark-color;
+  @include animation(color);
+  //   transition: background-color var(--animation-delay) var(--animation-func),
+  //     color var(--animation-delay) var(--animation-func);
+
+  & .icon-close {
+    display: none;
+  }
+
+  &.is-open .icon-close {
+    display: block;
+  }
+
+  &.is-open .icon-burger {
+    display: none;
+  }
+}
+
+.burger-button {
+  fill: currentColor;
+}
+
+.header-wrap {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+}
+
+.nav-list {
+  @extend %reset-list;
+  gap: 40px;
+  margin-right: auto;
+}
+
+.nav-link {
+  @extend %reset-link;
+  display: block;
+  position: relative;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  @include typography(
+    $fontWeight: $font-weight-title,
+    $txtColor: $navyblue-dark-color
+  );
+  @include animation();
+
+  &.current,
+  &:hover,
+  &:focus {
+    color: $ocean-pressed-color;
+  }
+}
+
+.current::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: $ocean-pressed-color;
+  border-radius: 2px;
+  opacity: 1;
+}
+
+.adress {
+  font-style: normal;
+}
+
+.address-list {
+  @extend %reset-list;
+  flex-direction: column;
+}
+
+.address-link {
+  @extend %reset-link;
+  @include typography($fontSize: 12px, $lineHeight: 1.17, $letspace: 0.04em);
+  @include animation();
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $ocean-pressed-color;
+  }
+}

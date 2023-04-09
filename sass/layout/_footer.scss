@@ -1,0 +1,145 @@
+.footer {
+  padding-top: 96px;
+  padding-bottom: 96px;
+  background-color: $navyblue-dark-color;
+}
+
+.footer-container {
+  width: 268px;
+}
+
+.footer-logo {
+  @extend %reset-link;
+  @include logo($logoColor: $cloud-light-color);
+  display: inline-block;
+  margin-bottom: 16px;
+}
+
+.footer-text {
+  color: $cornflower-accent-color;
+}
+
+.footer-navi {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 72px;
+}
+
+.footer-caption {
+  @include typography($fontWeight: $font-weight-title, $txtColor: $main-color);
+  margin-bottom: 16px;
+}
+
+.footer-social-list {
+  @extend %reset-list;
+  gap: 16px;
+}
+
+.footer-social {
+  @include social($size: 24px, $activeColor: $green-success-color);
+}
+
+.footer-subscribe {
+  width: 100%;
+}
+
+.form-subscribe {
+  position: relative;
+}
+
+.subscribe-label {
+  position: absolute;
+  left: 16px;
+  top: 8px;
+  font-size: 12px;
+  line-height: 2;
+  letter-spacing: 0.04em;
+  color: $main-color;
+}
+
+.subscribe-input {
+  margin-bottom: 16px;
+  padding: 8px 16px;
+  width: 100%;
+  height: 40px;
+  font-size: 12px;
+  line-height: 2;
+  letter-spacing: 0.04em;
+  color: $main-color;
+  border: 1px solid $main-color;
+  border-radius: 4px;
+  background-color: transparent;
+
+  &:not(:placeholder-shown) + .subscribe-label {
+    @extend %visually-hidden;
+  }
+}
+
+.subscribe-button {
+  @extend %button;
+  display: flex;
+  gap: 16px;
+  padding: 8px 24px;
+  margin: 0 auto;
+}
+
+.icon-send {
+  display: block;
+  height: 24px;
+  width: 24px;
+  fill: $main-color;
+}
+
+@media screen and (min-width: $tablet) {
+  .footer-navi {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 72px 24px;
+    padding-left: 108px;
+  }
+
+  .footer-container {
+    width: 264px;
+    text-align: left;
+  }
+
+  .footer-caption {
+    text-align: left;
+  }
+
+  .form-subscribe {
+    display: flex;
+    gap: 24px;
+  }
+
+  .subscribe-input {
+    margin-bottom: 0;
+    width: 264px;
+  }
+
+  .subscribe-button {
+    margin: 0;
+  }
+}
+
+@media screen and (min-width: $desktop) {
+  .footer-navi {
+    flex-wrap: initial;
+    gap: 0;
+    padding-left: 15px;
+    align-items: initial;
+  }
+
+  .footer-container {
+    margin-right: 120px;
+  }
+
+  .footer-subscribe {
+    width: auto;
+  }
+
+  .social-media {
+    margin-right: auto;
+  }
+}
