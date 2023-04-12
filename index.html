@@ -30,17 +30,31 @@
             >Web<span class="logo-text">Studio</span>
           </a>
           <button
-            class="nav-button is-open"
+            class="menu-open"
             type="button"
-            aria-label="Mobile menu opener"
+            aria-expanded="false"
+            aria-controls="menu-box"
           >
-            <svg width="32" height="22" class="burger-button">
-              <use class="icon-burger" href="./images/icons.svg#icon-menu-hamburger"></use>
-              <use class="icon-close" href="./images/icons.svg#icon-close-vector"></use>
-            close
+            <svg
+              width="32"
+              height="22"
+              class="burger-button"
+              aria-label="Mobile menu opener"
+            >
+              <use href="./images/icons.svg#icon-menu-hamburger"></use>
+            </svg>
           </button>
 
-          <div class="header-wrap">
+          <div class="menu-box">
+            <button class="menu-close">
+              <svg class="menu-close-icon">
+                <use
+                  class="menu-cross"
+                  href="./images/icons.svg#icon-close-vector"
+                ></use>
+              </svg>
+            </button>
+
             <ul class="nav-list">
               <li>
                 <a class="nav-link current" href="./index.html">Studio</a>
@@ -51,7 +65,7 @@
               <li><a class="nav-link" href="">Contacts</a></li>
             </ul>
 
-            <address class="adress">
+            <address>
               <ul class="address-list">
                 <li>
                   <a class="address-link" href="mailto:info@devstudio.com"
@@ -59,12 +73,43 @@
                   </a>
                 </li>
                 <li>
-                  <a class="address-link" href="tel:+110001111111"
+                  <a class="address-link tel-number" href="tel:+110001111111"
                     >+11 (000) 111-11-11
                   </a>
                 </li>
               </ul>
             </address>
+
+            <ul class="menu-social-list">
+              <li>
+                <a class="social" href="">
+                  <svg class="social-item">
+                    <use href="./images/icons.svg#icon-instagram"></use>
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a class="social" href="">
+                  <svg class="social-item">
+                    <use href="./images/icons.svg#icon-twitter"></use>
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a class="social" href="">
+                  <svg class="social-item">
+                    <use href="./images/icons.svg#icon-facebook"></use>
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a class="social" href="">
+                  <svg class="social-item">
+                    <use href="./images/icons.svg#icon-linkedin"></use>
+                  </svg>
+                </a>
+              </li>
+            </ul>
           </div>
         </nav>
       </div>
@@ -557,20 +602,22 @@
 
     <!-- Modal window -->
 
+    <!-- is-hidden -->
+
     <div class="backdrop is-hidden" data-modal>
       <div class="modal">
-        <button class="close-button" data-modal-close>
-          <svg class="modal-button">
+        <button class="modal-close" data-modal-close>
+          <svg class="modal-close-icon">
             <use href="./images/icons.svg#icon-close-vector"></use>
           </svg>
         </button>
         <b class="modal-title">Leave your contacts and we will call you back</b>
         <form>
           <div class="modal-box">
-            <label class="modal-label modal-text"
+            <label class="modal-label"
               >Name
               <div class="modal-wrap">
-                <input class="modal-input modal-text" type="text" name="name" />
+                <input class="modal-input" type="text" name="name" />
                 <svg class="modal-item" width="18px" height="24px">
                   <use href="./images/icons.svg#icon-person"></use>
                 </svg>
@@ -578,10 +625,10 @@
             </label>
           </div>
           <div class="modal-box">
-            <label class="modal-label modal-text"
+            <label class="modal-label"
               >Phone
               <div class="modal-wrap">
-                <input class="modal-input modal-text" type="tel" name="phone" />
+                <input class="modal-input" type="tel" name="phone" />
                 <svg class="modal-item" width="18px" height="24px">
                   <use href="./images/icons.svg#icon-phone"></use>
                 </svg>
@@ -589,14 +636,10 @@
             </label>
           </div>
           <div class="modal-box">
-            <label class="modal-label modal-text"
+            <label class="modal-label"
               >Email
               <div class="modal-wrap">
-                <input
-                  class="modal-input modal-text"
-                  type="email"
-                  name="email"
-                />
+                <input class="modal-input" type="email" name="email" />
                 <svg class="modal-item" width="18px" height="24px">
                   <use href="./images/icons.svg#icon-email"></use>
                 </svg>
@@ -604,10 +647,10 @@
             </label>
           </div>
           <div class="modal-box">
-            <label class="modal-label modal-text"
+            <label class="modal-label"
               >Comment
               <textarea
-                class="modal-comment modal-text"
+                class="modal-comment"
                 name="comment"
                 placeholder="Text input"
                 name="comment"
@@ -615,7 +658,7 @@
             </label>
           </div>
           <div class="modal-agreement">
-            <label class="checkbox-field modal-text">
+            <label class="checkbox-field">
               <input class="checkbox" type="checkbox" name="checkbox" />
               <svg class="checkbox-img">
                 <use href="./images/icons.svg#icon-click"></use>
@@ -632,6 +675,7 @@
 
     <!-- JS -->
 
-    <script src="./js/modal.js"></script>
+    <script defer src="./js/modal.js"></script>
+    <script defer src="./js/mobile-menu.js"></script>
   </body>
 </html>

@@ -64,3 +64,37 @@
     height: $size;
   }
 }
+
+@mixin close-button(
+  $color: $navyblue-dark-color,
+  $bgColor: $cornflower-accent-color,
+  $bColor: rgba(0, 0, 0, 0.1)
+) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  border: 1px solid $bColor;
+  border-radius: 50%;
+  color: $color;
+  background-color: $bgColor;
+  @include animation(color);
+  // transition: background-color $animation-delay $animation-func,
+  //   color $animation-delay $animation-func;
+
+  &-icon {
+    fill: currentColor;
+    width: 8px;
+    height: 8px;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: $ocean-pressed-color;
+    color: $main-color;
+  }
+}

@@ -13,45 +13,67 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 408px;
-  padding: 72px 24px 24px;
+  max-width: 392px;
+  padding: 72px 16px 24px;
   background-color: $dairy-modal-color;
   border-radius: 4px;
   opacity: 1;
   scale: 1;
-  transition: scale var(--animation-delay) var(--animation-func),
-    opacity var(--animation-delay) var(--animation-func);
+  @include animation(scale);
+  // transition: scale var(--animation-delay) var(--animation-func),
+  //   opacity var(--animation-delay) var(--animation-func);
 }
 
-.close-button {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
+// .modal {
+//   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12);
+//   position: absolute;
+//   top: 50%;
+//   left: 50%;
+//   transform: translate(-50%, -50%);
+//   width: 408px;
+//   padding: 72px 24px 24px;
+//   background-color: $dairy-modal-color;
+//   border-radius: 4px;
+//   opacity: 1;
+//   scale: 1;
+//   transition: scale var(--animation-delay) var(--animation-func),
+//     opacity var(--animation-delay) var(--animation-func);
+// }
+
+.modal-close {
+  @include close-button();
   top: 24px;
   right: 24px;
-  width: 24px;
-  height: 24px;
-  background-color: $cornflower-accent-color;
-  cursor: pointer;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 50%;
-  color: $navyblue-dark-color;
-  @include animation(color);
-  transition: background-color var(--animation-delay) var(--animation-func),
-    color var(--animation-delay) var(--animation-func);
 }
 
-.modal-button {
-  fill: currentColor;
-  width: 8px;
-  height: 8px;
-}
+//   display: inline-flex;
+//   justify-content: center;
+//   align-items: center;
+//   position: absolute;
+//   top: 24px;
+//   right: 24px;
+//   width: 24px;
+//   height: 24px;
+//   background-color: $cornflower-accent-color;
+//   cursor: pointer;
+//   border: 1px solid rgba(0, 0, 0, 0.1);
+//   border-radius: 50%;
+//   color: $navyblue-dark-color;
+//   @include animation(color);
+//   transition: background-color $animation-delay $animation-func,
+//     color $animation-delay $animation-func;
+// }
 
-.close-button:hover {
-  background-color: $ocean-pressed-color;
-  color: $main-color;
-}
+// .modal-button {
+//   fill: currentColor;
+//   width: 8px;
+//   height: 8px;
+// }
+
+// .close-button:hover {
+//   background-color: $ocean-pressed-color;
+//   color: $main-color;
+// }
 
 .is-hidden {
   pointer-events: none;
@@ -67,13 +89,22 @@
 .modal-title {
   display: block;
   margin-bottom: 16px;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 1.5;
-  text-align: center;
-  letter-spacing: 0.02em;
-  color: $navyblue-dark-color;
+  @include typography(
+    $fontWeight: $font-weight-title,
+    $txtColor: $navyblue-dark-color
+  );
 }
+
+// .modal-title {
+//   display: block;
+//   margin-bottom: 16px;
+//   font-weight: 500;
+//   font-size: 16px;
+//   line-height: 1.5;
+//   text-align: center;
+//   letter-spacing: 0.02em;
+//   color: $navyblue-dark-color;
+// }
 
 .modal-box {
   margin-bottom: 8px;
@@ -83,29 +114,44 @@
   display: flex;
   flex-direction: column;
   gap: 4px;
+  @extend %modal-text;
 }
 
 .modal-wrap {
   position: relative;
 }
 
-.modal-text {
-  font-size: 12px;
-  line-height: 1.17;
-  letter-spacing: 0.04em;
-  color: $lightslate-subtle-color;
-}
+// .modal-text {
+//   font-size: 12px;
+//   line-height: 1.17;
+//   letter-spacing: 0.04em;
+//   color: $lightslate-subtle-color;
+// }
 
 .modal-input {
+  @extend %modal-text;
+  @extend %modal-field;
   width: 360px;
   height: 40px;
   padding-left: 38px;
-  color: $navyblue-dark-color;
-  background-color: $dairy-modal-color;
-  border: 1px solid $navyblue-modal-color;
-  border-radius: 4px;
-  transition: border-color var(--animation-delay) var(--animation-func);
+
+  &:hover,
+  &:focus,
+  &:active {
+    border-color: $iris-brand-color;
+  }
 }
+
+// .modal-input {
+//   width: 360px;
+//   height: 40px;
+//   padding-left: 38px;
+//   color: $navyblue-dark-color;
+//   background-color: $dairy-modal-color;
+//   border: 1px solid $navyblue-modal-color;
+//   border-radius: 4px;
+//   transition: border-color var(--animation-delay) var(--animation-func);
+// }
 
 .modal-item {
   position: absolute;
@@ -113,23 +159,32 @@
   left: 16px;
   fill: $navyblue-dark-color;
   transform: translateY(-50%);
-  transition: fill var(--animation-delay) var(--animation-func);
+  @include animation(fill);
+
+  .modal-input:hover + &,
+  .modal-input:active + &,
+  .modal-input:focus + & {
+    fill: $iris-brand-color;
+  }
 }
 
 .modal-comment {
+  @extend %modal-field;
   resize: none;
   width: 100%;
   min-height: 120px;
   padding: 8px 16px;
   color: $navyblue-dark-color;
-  background-color: $dairy-modal-color;
-  border: 1px solid $navyblue-modal-color;
-  border-radius: 4px;
-  transition: border-color var(--animation-delay) var(--animation-func);
-}
 
-.modal-comment::placeholder {
-  color: $lightslate-subtle-color;
+  &::placeholder {
+    color: $lightslate-subtle-color;
+  }
+
+  &:hover,
+  &:active,
+  &:focus {
+    border-color: $iris-brand-color;
+  }
 }
 
 .modal-agreement {
@@ -141,19 +196,15 @@
   position: relative;
   display: flex;
   align-items: center;
+  @extend %modal-text;
+
+  & > a {
+    color: $iris-brand-color;
+  }
 }
 
 .checkbox {
-  position: absolute;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  clip-path: inset(100%);
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  padding: 0;
-  border: 0;
-  white-space: nowrap;
+  @extend %visually-hidden;
 }
 
 .checkbox-item {
@@ -162,11 +213,12 @@
   margin-right: 8px;
   border: 1px solid $navyblue-modal-color;
   border-radius: 2px;
-  transition: border-color var(--animation-delay) var(--animation-func);
-}
+  @include animation(border-color);
 
-.checkbox-field > a {
-  color: $iris-brand-color;
+  .checkbox:hover ~ &,
+  .checkbox:focus ~ & {
+    border-color: $iris-brand-color;
+  }
 }
 
 .checkbox-img {
@@ -177,32 +229,16 @@
   width: 16px;
   height: 16px;
   opacity: 1;
-  transition: opasity var(--animation-delay) var(--animation-func);
+  @include animation(opasity);
+
+  .checkbox:not(:checked) + & {
+    opacity: 0;
+  }
 }
 
-.modal-input:hover,
-.modal-input:focus,
-.modal-input:active {
-  border-color: $iris-brand-color;
-}
-
-.modal-comment:hover,
-.modal-comment:focus,
-.modal-comment:active {
-  border-color: $iris-brand-color;
-}
-
-.modal-input:hover + .modal-item,
-.modal-input:focus + .modal-item,
-.modal-input:active + .modal-item {
-  fill: $iris-brand-color;
-}
-
-.checkbox:hover ~ .checkbox-item,
-.checkbox:focus ~ .checkbox-item {
-  border-color: $iris-brand-color;
-}
-
-.checkbox:not(:checked) + .checkbox-img {
-  opacity: 0;
+@media screen and (min-width: $tablet) {
+  .modal {
+    max-width: 408px;
+    padding: 72px 24px 24px;
+  }
 }

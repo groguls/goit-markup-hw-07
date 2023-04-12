@@ -1,5 +1,4 @@
 .header {
-  position: relative;
   box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08);
   border-bottom: 1px solid $cornflower-accent-color;
 }
@@ -8,7 +7,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   text-align: left;
 }
 
@@ -20,65 +18,75 @@
   @include logo($logoColor: $navyblue-dark-color);
 }
 
-.nav-button {
+.menu-open {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  //   position: absolute;
-  //   top: 24px;
-  //   right: 24px;
   margin: 0;
   padding: 24px 0;
-
   stroke: $navyblue-dark-color;
   background-color: transparent;
   cursor: pointer;
   border: none;
+  @include animation(stroke);
 
-  color: $navyblue-dark-color;
-  @include animation(color);
-  //   transition: background-color var(--animation-delay) var(--animation-func),
-  //     color var(--animation-delay) var(--animation-func);
-
-  & .icon-close {
-    display: none;
-  }
-
-  &.is-open .icon-close {
-    display: block;
-  }
-
-  &.is-open .icon-burger {
-    display: none;
+  &:hover,
+  &:focus,
+  &:active {
+    stroke: $ocean-pressed-color;
   }
 }
 
-.burger-button {
-  fill: currentColor;
-}
-
-.header-wrap {
-  position: absolute;
-  top: 100%;
+.menu-box {
+  display: none;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
   left: 0;
-  width: 100%;
+  width: 100vw;
+  height: 100vh;
+
+  padding: 80px 35px 40px 40px;
+  background-color: $main-color;
+
+  &.is-open {
+    display: flex;
+  }
+}
+
+.menu-close {
+  @include close-button(
+    $bColor: $navyblue-dark-color,
+    $bgColor: rgba(231, 233, 252, 0.1)
+  );
+  top: 24px;
+  right: 24px;
+
+  & .menu-cross {
+    display: block;
+    width: 8px;
+    height: 8px;
+  }
 }
 
 .nav-list {
   @extend %reset-list;
+  flex-direction: column;
   gap: 40px;
-  margin-right: auto;
+  margin-bottom: auto;
 }
 
 .nav-link {
   @extend %reset-link;
   display: block;
   position: relative;
-  padding-top: 24px;
-  padding-bottom: 24px;
+
   @include typography(
-    $fontWeight: $font-weight-title,
-    $txtColor: $navyblue-dark-color
+    $fontWeight: $font-weight-caption,
+    $fontSize: $font-size-caption,
+    $lineHeight: 1.11,
+    $txtColor: $navyblue-dark-color,
+    $txtAlign: left
   );
   @include animation();
 
@@ -89,36 +97,149 @@
   }
 }
 
-.current::after {
-  content: "";
-  display: block;
-  position: absolute;
-  bottom: -1px;
-  left: 0;
-  width: 100%;
-  height: 4px;
-  background-color: $ocean-pressed-color;
-  border-radius: 2px;
-  opacity: 1;
-}
-
-.adress {
-  font-style: normal;
-}
-
 .address-list {
   @extend %reset-list;
-  flex-direction: column;
+  flex-direction: column-reverse;
+  gap: 40px;
+  margin-bottom: 48px;
+  font-style: normal;
 }
 
 .address-link {
   @extend %reset-link;
-  @include typography($fontSize: 12px, $lineHeight: 1.17, $letspace: 0.04em);
+  @include typography(
+    $font-weight-title,
+    $fontSize: $font-size-title,
+    $lineHeight: 1.2
+  );
   @include animation();
 
   &:hover,
   &:focus,
   &:active {
     color: $ocean-pressed-color;
+  }
+
+  &[href^="tel"] {
+    @include typography(
+      $fontWeight: $font-weight-caption,
+      $fontSize: $font-size-caption,
+      $lineHeight: 1.11,
+      $txtColor: $iris-brand-color
+    );
+  }
+}
+
+.menu-social-list {
+  @extend %reset-list;
+  gap: 56px;
+
+  & .social {
+    @include social($size: 24px);
+  }
+}
+
+@media screen and (min-width: $tablet) {
+  .nav-container {
+    justify-content: initial;
+  }
+
+  .logo {
+    padding-top: 24px;
+    padding-bottom: 24px;
+    margin-right: 120px;
+  }
+
+  .menu-open {
+    display: none;
+  }
+
+  .menu-close {
+    display: none;
+  }
+
+  .menu-box {
+    display: flex;
+    flex-direction: initial;
+    align-items: center;
+    position: initial;
+    padding: initial;
+    height: initial;
+  }
+
+  .nav-list {
+    flex-direction: initial;
+    margin: 0;
+    margin-right: auto;
+  }
+
+  .nav-link {
+    padding-top: 24px;
+    padding-bottom: 24px;
+    font-weight: $font-weight-title;
+    font-size: 16px;
+    line-height: 1.5;
+    color: $navyblue-dark-color;
+    text-align: center;
+  }
+
+  .current::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: $ocean-pressed-color;
+    border-radius: 2px;
+    opacity: 1;
+  }
+
+  .address-list {
+    flex-direction: column;
+    gap: 12px;
+    margin: 0;
+    margin-left: auto;
+  }
+
+  .address-link {
+    @include typography($fontSize: 12px, $lineHeight: 1.17);
+
+    &[href^="tel"] {
+      @include typography(
+        $fontSize: 12px,
+        $lineHeight: 1.17,
+        $txtColor: $slate-text-color
+      );
+    }
+  }
+
+  .menu-social-list {
+    display: none;
+  }
+}
+
+@media screen and (min-width: $desktop) {
+  .logo {
+    margin-right: 76px;
+  }
+
+  .address-list {
+    flex-direction: row;
+    gap: 40px;
+  }
+
+  .address-link {
+    @include typography();
+
+    &[href^="tel"] {
+      @include typography();
+    }
+  }
+
+  .address-link {
+    font-size: 16px;
+    line-height: 1.5;
   }
 }

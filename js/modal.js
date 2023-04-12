@@ -5,10 +5,16 @@
     modal: document.querySelector("[data-modal]"),
   };
 
-  refs.openModalBtn.addEventListener("click", toggleModal);
-  refs.closeModalBtn.addEventListener("click", toggleModal);
+  const openModal = () => {
+    refs.modal.classList.remove("is-hidden");
+    document.body.style.overflow = "hidden";
+  };
 
-  function toggleModal() {
-    refs.modal.classList.toggle("is-hidden");
-  }
+  const closeModal = () => {
+    refs.modal.classList.add("is-hidden");
+    document.body.style.overflow = "";
+  };
+
+  refs.openModalBtn.addEventListener("click", openModal);
+  refs.closeModalBtn.addEventListener("click", closeModal);
 })();

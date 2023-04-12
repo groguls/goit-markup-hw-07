@@ -38,10 +38,10 @@
 .team-social-list {
   @extend %reset-list;
   gap: 24px;
-}
 
-.social {
-  @include social();
+  & .social {
+    @include social();
+  }
 }
 
 @media screen and (min-width: $tablet) {
