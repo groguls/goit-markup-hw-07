@@ -18,7 +18,7 @@
       href="https://fonts.googleapis.com/css2?family=Raleway:wght@800&family=Roboto:wght@400;500;700;900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./css/portfolio.min.css" />
   </head>
 
   <body>
@@ -26,67 +26,144 @@
     <header class="header">
       <div class="container header-container">
         <nav class="nav-container">
-          <a class="logo-link link" href="./index.html"
-            >Web<span class="logo-element">Studio</span></a
+          <a class="logo" href="./index.html"
+            >Web<span class="logo-text">Studio</span>
+          </a>
+          <button
+            class="menu-open"
+            type="button"
+            aria-expanded="false"
+            aria-controls="menu-box"
           >
-          <ul class="nav-list list">
-            <li>
-              <a class="nav-link link" href="./index.html">Studio</a>
-            </li>
-            <li>
-              <a class="nav-link link current" href="./portfolio.html"
-                >Portfolio</a
-              >
-            </li>
-            <li><a class="nav-link link" href="">Contacts</a></li>
-          </ul>
+            <svg
+              width="32"
+              height="22"
+              class="burger-button"
+              aria-label="Mobile menu opener"
+            >
+              <use href="./images/icons.svg#icon-menu-hamburger"></use>
+            </svg>
+          </button>
+
+          <div class="menu-box">
+            <button class="menu-close">
+              <svg class="menu-close-icon">
+                <use
+                  class="menu-cross"
+                  href="./images/icons.svg#icon-close-vector"
+                ></use>
+              </svg>
+            </button>
+
+            <ul class="nav-list">
+              <li>
+                <a class="nav-link" href="./index.html">Studio</a>
+              </li>
+              <li>
+                <a class="nav-link current" href="./portfolio.html"
+                  >Portfolio</a
+                >
+              </li>
+              <li><a class="nav-link" href="">Contacts</a></li>
+            </ul>
+
+            <address>
+              <ul class="address-list">
+                <li>
+                  <a class="address-link" href="mailto:info@devstudio.com"
+                    >info@devstudio.com
+                  </a>
+                </li>
+                <li>
+                  <a class="address-link tel-number" href="tel:+110001111111"
+                    >+11 (000) 111-11-11
+                  </a>
+                </li>
+              </ul>
+            </address>
+
+            <ul class="menu-social-list">
+              <li>
+                <a class="social" href="">
+                  <svg class="social-item">
+                    <use href="./images/icons.svg#icon-instagram"></use>
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a class="social" href="">
+                  <svg class="social-item">
+                    <use href="./images/icons.svg#icon-twitter"></use>
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a class="social" href="">
+                  <svg class="social-item">
+                    <use href="./images/icons.svg#icon-facebook"></use>
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a class="social" href="">
+                  <svg class="social-item">
+                    <use href="./images/icons.svg#icon-linkedin"></use>
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
         </nav>
-        <address class="adress">
-          <ul class="address-list list">
-            <li>
-              <a class="link address-link" href="mailto:info@devstudio.com"
-                >info@devstudio.com</a
-              >
-            </li>
-            <li>
-              <a class="link address-link" href="tel:+110001111111"
-                >+11 (000) 111-11-11</a
-              >
-            </li>
-          </ul>
-        </address>
       </div>
     </header>
 
-    <!-- Main Section -->
+    <!-- Main Portfolio Section -->
 
     <main>
       <section class="section examples">
         <div class="container">
           <h1 class="visually-hidden">Examples of work</h1>
-          <ul class="list button-list">
-            <li><button type="button" class="button">All</button></li>
+          <ul class="button-list">
+            <li><button type="button" class="example-button">All</button></li>
             <li>
-              <button type="button" class="button">Web Site</button>
+              <button type="button" class="example-button">Web Site</button>
             </li>
-            <li><button type="button" class="button">App</button></li>
-            <li><button type="button" class="button">Design</button></li>
+            <li><button type="button" class="example-button">App</button></li>
             <li>
-              <button type="button" class="button">Marketing</button>
+              <button type="button" class="example-button">Design</button>
+            </li>
+            <li>
+              <button type="button" class="example-button">Marketing</button>
             </li>
           </ul>
 
-          <ul class="list examples-list">
+          <ul class="examples-list">
             <li class="example-item">
-              <a class="link example-link" href="">
+              <a class="example-link" href="">
                 <div class="example-wrapper">
-                  <img
-                    class="img-attribute"
-                    src="./images/portfolio1img-min.jpg"
-                    alt="Banking App interface"
-                    width="360"
-                    height="300"
-                  />
+                  <picture class="img-attribute">
+                    <source
+                      srcset="
+                        ./images/img-portfolio1-1x.webp 1x,
+                        ./images/img-portfolio1-2x.webp 2x
+                      "
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="
+                        ./images/img-portfolio1-1x-min.jpg 1x,
+                        ./images/img-portfolio1-2x-min.jpg 2x
+                      "
+                      type="image/jpeg"
+                    />
+                    <img
+                      class="img-attribute"
+                      src="./images/portfolio1img-min.jpg"
+                      alt="Banking App interface"
+                      width="360"
+                      height="300"
+                    />
+                  </picture>
                   <div class="example-overlay">
                     <p class="example-text">
                       14 Stylish and User-Friendly App Design Concepts · Task
@@ -96,21 +173,40 @@
                   </div>
                 </div>
                 <div class="example-card">
-                  <h2 class="section-title">Banking App Interface Concept</h2>
-                  <p class="section-text">App</p>
+                  <h2 class="example-card-title">
+                    Banking App Interface Concept
+                  </h2>
+                  <p class="example-card-text">App</p>
                 </div>
               </a>
             </li>
             <li class="example-item">
-              <a class="link example-link" href="">
+              <a class="example-link" href="">
                 <div class="example-wrapper">
-                  <img
-                    class="img-attribute"
-                    src="./images/portfolio2img-min.jpg"
-                    alt="Cashless paying by phone"
-                    width="360"
-                    height="300"
-                  />
+                  <picture class="img-attribute">
+                    <source
+                      srcset="
+                        ./images/img-portfolio2-1x.webp 1x,
+                        ./images/img-portfolio2-2x.webp 2x
+                      "
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="
+                        ./images/img-portfolio2-1x-min.jpg 1x,
+                        ./images/img-portfolio2-2x-min.jpg 2x
+                      "
+                      type="image/jpeg"
+                    />
+                    <img
+                      class="img-attribute"
+                      src="./images/portfolio2img-min.jpg"
+                      alt="Cashless paying by phone"
+                      width="360"
+                      height="300"
+                    />
+                  </picture>
+
                   <div class="example-overlay">
                     <p class="example-text">
                       14 Stylish and User-Friendly App Design Concepts · Task
@@ -120,21 +216,38 @@
                   </div>
                 </div>
                 <div class="example-card">
-                  <h2 class="section-title">Cashless Payment</h2>
-                  <p class="section-text">Marketing</p>
+                  <h2 class="example-card-title">Cashless Payment</h2>
+                  <p class="example-card-text">Marketing</p>
                 </div>
               </a>
             </li>
             <li class="example-item">
-              <a class="link example-link" href="">
+              <a class="example-link" href="">
                 <div class="example-wrapper">
-                  <img
-                    class="img-attribute"
-                    src="./images/portfolio3img-min.jpg"
-                    alt="Same application on computer and phone"
-                    width="360"
-                    height="300"
-                  />
+                  <picture class="img-attribute">
+                    <source
+                      srcset="
+                        ./images/img-portfolio3-1x.webp 1x,
+                        ./images/img-portfolio3-2x.webp 2x
+                      "
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="
+                        ./images/img-portfolio3-1x-min.jpg 1x,
+                        ./images/img-portfolio3-2x-min.jpg 2x
+                      "
+                      type="image/jpeg"
+                    />
+                    <img
+                      class="img-attribute"
+                      src="./images/portfolio3img-min.jpg"
+                      alt="Same application on computer and phone"
+                      width="360"
+                      height="300"
+                    />
+                  </picture>
+
                   <div class="example-overlay">
                     <p class="example-text">
                       14 Stylish and User-Friendly App Design Concepts · Task
@@ -144,21 +257,38 @@
                   </div>
                 </div>
                 <div class="example-card">
-                  <h2 class="section-title">Meditation App</h2>
-                  <p class="section-text">App</p>
+                  <h2 class="example-card-title">Meditation App</h2>
+                  <p class="example-card-text">App</p>
                 </div>
               </a>
             </li>
             <li class="example-item">
-              <a class="link example-link" href="">
+              <a class="example-link" href="">
                 <div class="example-wrapper">
-                  <img
-                    class="img-attribute"
-                    src="./images/portfolio4img-min.jpg"
-                    alt="Application on phone with cabin of auto on background"
-                    width="360"
-                    height="300"
-                  />
+                  <picture class="img-attribute">
+                    <source
+                      srcset="
+                        ./images/img-portfolio4-1x.webp 1x,
+                        ./images/img-portfolio4-2x.webp 2x
+                      "
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="
+                        ./images/img-portfolio4-1x-min.jpg 1x,
+                        ./images/img-portfolio4-2x-min.jpg 2x
+                      "
+                      type="image/jpeg"
+                    />
+                    <img
+                      class="img-attribute"
+                      src="./images/portfolio4img-min.jpg"
+                      alt="Application on phone with cabin of auto on background"
+                      width="360"
+                      height="300"
+                    />
+                  </picture>
+
                   <div class="example-overlay">
                     <p class="example-text">
                       14 Stylish and User-Friendly App Design Concepts · Task
@@ -168,21 +298,38 @@
                   </div>
                 </div>
                 <div class="example-card">
-                  <h2 class="section-title">Taxi Service</h2>
-                  <p class="section-text">Marketing</p>
+                  <h2 class="example-card-title">Taxi Service</h2>
+                  <p class="example-card-text">Marketing</p>
                 </div>
               </a>
             </li>
             <li class="example-item">
-              <a class="link example-link" href="">
+              <a class="example-link" href="">
                 <div class="example-wrapper">
-                  <img
-                    class="img-attribute"
-                    src="./images/portfolio5img-min.jpg"
-                    alt="examples of phone wallpapers"
-                    width="360"
-                    height="300"
-                  />
+                  <picture class="img-attribute">
+                    <source
+                      srcset="
+                        ./images/img-portfolio5-1x.webp 1x,
+                        ./images/img-portfolio5-2x.webp 2x
+                      "
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="
+                        ./images/img-portfolio5-1x-min.jpg 1x,
+                        ./images/img-portfolio5-2x-min.jpg 2x
+                      "
+                      type="image/jpeg"
+                    />
+                    <img
+                      class="img-attribute"
+                      src="./images/portfolio5img-min.jpg"
+                      alt="examples of phone wallpapers"
+                      width="360"
+                      height="300"
+                    />
+                  </picture>
+
                   <div class="example-overlay">
                     <p class="example-text">
                       14 Stylish and User-Friendly App Design Concepts · Task
@@ -192,21 +339,37 @@
                   </div>
                 </div>
                 <div class="example-card">
-                  <h2 class="section-title">Screen Illustrations</h2>
-                  <p class="section-text">Design</p>
+                  <h2 class="example-card-title">Screen Illustrations</h2>
+                  <p class="example-card-text">Design</p>
                 </div>
               </a>
             </li>
             <li class="example-item">
-              <a class="link example-link" href="">
+              <a class="example-link" href="">
                 <div class="example-wrapper">
-                  <img
-                    class="img-attribute"
-                    src="./images/portfolio6img-min.jpg"
-                    alt="Girl with phone"
-                    width="360"
-                    height="300"
-                  />
+                  <picture class="img-attribute">
+                    <source
+                      srcset="
+                        ./images/img-portfolio6-1x.webp 1x,
+                        ./images/img-portfolio6-2x.webp 2x
+                      "
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="
+                        ./images/img-portfolio6-1x-min.jpg 1x,
+                        ./images/img-portfolio6-2x-min.jpg 2x
+                      "
+                      type="image/jpeg"
+                    />
+                    <img
+                      class="img-attribute"
+                      src="./images/portfolio6img-min.jpg"
+                      alt="Girl with phone"
+                      width="360"
+                      height="300"
+                    />
+                  </picture>
                   <div class="example-overlay">
                     <p class="example-text">
                       14 Stylish and User-Friendly App Design Concepts · Task
@@ -216,21 +379,37 @@
                   </div>
                 </div>
                 <div class="example-card">
-                  <h2 class="section-title">Online Courses</h2>
-                  <p class="section-text">Marketing</p>
+                  <h2 class="example-card-title">Online Courses</h2>
+                  <p class="example-card-text">Marketing</p>
                 </div>
               </a>
             </li>
             <li class="example-item">
-              <a class="link example-link" href="">
+              <a class="example-link" href="">
                 <div class="example-wrapper">
-                  <img
-                    class="img-attribute"
-                    src="./images/portfolio7img-min.jpg"
-                    alt="Examples of websites design"
-                    width="360"
-                    height="300"
-                  />
+                  <picture class="img-attribute">
+                    <source
+                      srcset="
+                        ./images/img-portfolio7-1x.webp 1x,
+                        ./images/img-portfolio7-2x.webp 2x
+                      "
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="
+                        ./images/img-portfolio7-1x-min.jpg 1x,
+                        ./images/img-portfolio7-2x-min.jpg 2x
+                      "
+                      type="image/jpeg"
+                    />
+                    <img
+                      class="img-attribute"
+                      src="./images/portfolio7img-min.jpg"
+                      alt="Examples of websites design"
+                      width="360"
+                      height="300"
+                    />
+                  </picture>
                   <div class="example-overlay">
                     <p class="example-text">
                       14 Stylish and User-Friendly App Design Concepts · Task
@@ -240,21 +419,37 @@
                   </div>
                 </div>
                 <div class="example-card">
-                  <h2 class="section-title">Instagram Stories Concept</h2>
-                  <p class="section-text">Design</p>
+                  <h2 class="example-card-title">Instagram Stories Concept</h2>
+                  <p class="example-card-text">Design</p>
                 </div>
               </a>
             </li>
             <li class="example-item">
-              <a class="link example-link" href="">
+              <a class="example-link" href="">
                 <div class="example-wrapper">
-                  <img
-                    class="img-attribute"
-                    src="./images/portfolio8img-min.jpg"
-                    alt="Women with food in bag"
-                    width="360"
-                    height="300"
-                  />
+                  <picture class="img-attribute">
+                    <source
+                      srcset="
+                        ./images/img-portfolio8-1x.webp 1x,
+                        ./images/img-portfolio8-2x.webp 2x
+                      "
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="
+                        ./images/img-portfolio8-1x-min.jpg 1x,
+                        ./images/img-portfolio8-2x-min.jpg 2x
+                      "
+                      type="image/jpeg"
+                    />
+                    <img
+                      class="img-attribute"
+                      src="./images/portfolio8img-min.jpg"
+                      alt="Women with food in bag"
+                      width="360"
+                      height="300"
+                    />
+                  </picture>
                   <div class="example-overlay">
                     <p class="example-text">
                       14 Stylish and User-Friendly App Design Concepts · Task
@@ -264,21 +459,37 @@
                   </div>
                 </div>
                 <div class="example-card">
-                  <h2 class="section-title">Organic Food</h2>
-                  <p class="section-text">Web Site</p>
+                  <h2 class="example-card-title">Organic Food</h2>
+                  <p class="example-card-text">Web Site</p>
                 </div>
               </a>
             </li>
             <li class="example-item">
-              <a class="link example-link" href="">
+              <a class="example-link" href="">
                 <div class="example-wrapper">
-                  <img
-                    class="img-attribute"
-                    src="./images/portfolio9img-min.jpg"
-                    alt="Making the cup of cofee with milk"
-                    width="360"
-                    height="300"
-                  />
+                  <picture class="img-attribute">
+                    <source
+                      srcset="
+                        ./images/img-portfolio9-1x.webp 1x,
+                        ./images/img-portfolio9-2x.webp 2x
+                      "
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="
+                        ./images/img-portfolio9-1x-min.jpg 1x,
+                        ./images/img-portfolio9-2x-min.jpg 2x
+                      "
+                      type="image/jpeg"
+                    />
+                    <img
+                      class="img-attribute"
+                      src="./images/portfolio9img-min.jpg"
+                      alt="Making the cup of cofee with milk"
+                      width="360"
+                      height="300"
+                    />
+                  </picture>
                   <div class="example-overlay">
                     <p class="example-text">
                       14 Stylish and User-Friendly App Design Concepts · Task
@@ -288,8 +499,8 @@
                   </div>
                 </div>
                 <div class="example-card">
-                  <h2 class="section-title">Fresh Coffee</h2>
-                  <p class="section-text">Web Site</p>
+                  <h2 class="example-card-title">Fresh Coffee</h2>
+                  <p class="example-card-text">Web Site</p>
                 </div>
               </a>
             </li>
@@ -303,8 +514,8 @@
     <footer class="footer">
       <div class="footer-navi container">
         <div class="footer-container">
-          <a class="link footer-link" href="./index.html"
-            >Web<span class="footer-element">Studio</span>
+          <a class="footer-logo" href="./index.html"
+            >Web<span class="logo-text">Studio</span>
           </a>
           <p class="footer-text">
             Increase the flow of customers and sales for your business with
@@ -314,40 +525,40 @@
         <div class="social-media">
           <p class="footer-caption">Social media</p>
 
-          <ul class="social-list list">
+          <ul class="footer-social-list">
             <li>
-              <a class="social" href="">
-                <svg class="social-item">
+              <a class="footer-social" href="">
+                <svg class="footer-social-item">
                   <use href="./images/icons.svg#icon-instagram"></use>
                 </svg>
               </a>
             </li>
             <li>
-              <a class="social" href="">
-                <svg class="social-item">
+              <a class="footer-social" href="">
+                <svg class="footer-social-item">
                   <use href="./images/icons.svg#icon-twitter"></use>
                 </svg>
               </a>
             </li>
             <li>
-              <a class="social" href="">
-                <svg class="social-item">
+              <a class="footer-social" href="">
+                <svg class="footer-social-item">
                   <use href="./images/icons.svg#icon-facebook"></use>
                 </svg>
               </a>
             </li>
             <li>
-              <a class="social" href="">
-                <svg class="social-item">
+              <a class="footer-social" href="">
+                <svg class="footer-social-item">
                   <use href="./images/icons.svg#icon-linkedin"></use>
                 </svg>
               </a>
             </li>
           </ul>
         </div>
-        <div class="subscribe">
+        <div class="footer-subscribe">
           <p class="footer-caption">Subscribe</p>
-          <form class="footer-subscribe">
+          <form class="form-subscribe">
             <input
               type="email"
               class="subscribe-input"
@@ -357,7 +568,7 @@
             />
 
             <label for="user-email" class="subscribe-label">E-mail</label>
-            <button type="submit" class="subscribe-button button">
+            <button type="submit" class="subscribe-button">
               Subscribe
               <span>
                 <svg class="icon-send">
@@ -369,5 +580,7 @@
         </div>
       </div>
     </footer>
+
+    <script defer src="./js/mobile-menu.js"></script>
   </body>
 </html>

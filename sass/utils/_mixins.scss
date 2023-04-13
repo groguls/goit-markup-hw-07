@@ -37,8 +37,16 @@
   letter-spacing: $letspace;
 }
 
-@mixin animation($style: background-color) {
-  transition: $style $animation-delay $animation-func;
+@mixin animation($properties...) {
+  $transition-properties: ();
+  @each $property in $properties {
+    $transition-properties: append(
+      $transition-properties,
+      $property $animation-delay $animation-func,
+      comma
+    );
+  }
+  transition: $transition-properties;
 }
 
 @mixin social($size: 16px, $activeColor: $ocean-pressed-color) {
@@ -50,7 +58,7 @@
   background-color: $iris-brand-color;
   border-radius: 50%;
   color: $cloud-light-color;
-  @include animation();
+  @include animation(background-color);
 
   &:hover,
   &:focus,
@@ -81,9 +89,7 @@
   border-radius: 50%;
   color: $color;
   background-color: $bgColor;
-  @include animation(color);
-  // transition: background-color $animation-delay $animation-func,
-  //   color $animation-delay $animation-func;
+  @include animation(background-color, color);
 
   &-icon {
     fill: currentColor;

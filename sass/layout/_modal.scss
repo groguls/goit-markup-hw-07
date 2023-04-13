@@ -1,5 +1,6 @@
 .backdrop {
   position: fixed;
+  z-index: 1;
   top: 0;
   left: 0;
   width: 100vw;
@@ -19,61 +20,14 @@
   border-radius: 4px;
   opacity: 1;
   scale: 1;
-  @include animation(scale);
-  // transition: scale var(--animation-delay) var(--animation-func),
-  //   opacity var(--animation-delay) var(--animation-func);
+  @include animation(scale, opacity);
 }
-
-// .modal {
-//   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12);
-//   position: absolute;
-//   top: 50%;
-//   left: 50%;
-//   transform: translate(-50%, -50%);
-//   width: 408px;
-//   padding: 72px 24px 24px;
-//   background-color: $dairy-modal-color;
-//   border-radius: 4px;
-//   opacity: 1;
-//   scale: 1;
-//   transition: scale var(--animation-delay) var(--animation-func),
-//     opacity var(--animation-delay) var(--animation-func);
-// }
 
 .modal-close {
   @include close-button();
   top: 24px;
   right: 24px;
 }
-
-//   display: inline-flex;
-//   justify-content: center;
-//   align-items: center;
-//   position: absolute;
-//   top: 24px;
-//   right: 24px;
-//   width: 24px;
-//   height: 24px;
-//   background-color: $cornflower-accent-color;
-//   cursor: pointer;
-//   border: 1px solid rgba(0, 0, 0, 0.1);
-//   border-radius: 50%;
-//   color: $navyblue-dark-color;
-//   @include animation(color);
-//   transition: background-color $animation-delay $animation-func,
-//     color $animation-delay $animation-func;
-// }
-
-// .modal-button {
-//   fill: currentColor;
-//   width: 8px;
-//   height: 8px;
-// }
-
-// .close-button:hover {
-//   background-color: $ocean-pressed-color;
-//   color: $main-color;
-// }
 
 .is-hidden {
   pointer-events: none;
@@ -95,17 +49,6 @@
   );
 }
 
-// .modal-title {
-//   display: block;
-//   margin-bottom: 16px;
-//   font-weight: 500;
-//   font-size: 16px;
-//   line-height: 1.5;
-//   text-align: center;
-//   letter-spacing: 0.02em;
-//   color: $navyblue-dark-color;
-// }
-
 .modal-box {
   margin-bottom: 8px;
 }
@@ -121,13 +64,6 @@
   position: relative;
 }
 
-// .modal-text {
-//   font-size: 12px;
-//   line-height: 1.17;
-//   letter-spacing: 0.04em;
-//   color: $lightslate-subtle-color;
-// }
-
 .modal-input {
   @extend %modal-text;
   @extend %modal-field;
@@ -141,17 +77,6 @@
     border-color: $iris-brand-color;
   }
 }
-
-// .modal-input {
-//   width: 360px;
-//   height: 40px;
-//   padding-left: 38px;
-//   color: $navyblue-dark-color;
-//   background-color: $dairy-modal-color;
-//   border: 1px solid $navyblue-modal-color;
-//   border-radius: 4px;
-//   transition: border-color var(--animation-delay) var(--animation-func);
-// }
 
 .modal-item {
   position: absolute;

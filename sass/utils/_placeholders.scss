@@ -39,7 +39,7 @@
   line-height: 1.5;
   color: $main-color;
   letter-spacing: 0.04em;
-  @include animation();
+  @include animation(background-color);
 
   &:hover {
     background-color: $ocean-pressed-color;
@@ -60,9 +60,7 @@
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
   color: $navyblue-dark-color;
-  @include animation(color);
-  transition: background-color $animation-delay $animation-func,
-    color $animation-delay $animation-func;
+  @include animation(background-color, color);
 
   &-button-icon {
     fill: currentColor;

@@ -1,0 +1,143 @@
+.examples {
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
+
+.example-button {
+  cursor: pointer;
+  padding: 12px 24px;
+  background-color: $cloud-light-color;
+  border: 1px solid $cornflower-accent-color;
+  border-radius: 4px;
+  color: $iris-brand-color;
+  @include animation(background-color, color, border, box-shadow);
+
+  &:hover,
+  &:focus,
+  &:active {
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08);
+    background-color: $ocean-pressed-color;
+    border: 1px solid $ocean-pressed-color;
+    color: $main-color;
+  }
+}
+
+.button-list {
+  @extend %reset-list;
+  flex-wrap: wrap;
+  gap: 16px 24px;
+  margin-right: auto;
+  margin-bottom: 48px;
+}
+
+.examples-list {
+  @extend %reset-list;
+  flex-direction: column;
+  gap: 48px;
+  align-items: center;
+}
+
+.example-link {
+  @extend %reset-link;
+  display: block;
+  @include animation(box-shadow);
+
+  &:hover,
+  &:focus,
+  &:active {
+    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08);
+  }
+}
+
+.example-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.example-overlay {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(100%);
+  width: 100%;
+  height: 100%;
+  padding: 40px 32px;
+  background-color: $iris-brand-color;
+  @include animation(transform);
+
+  .example-link:hover &,
+  .example-link:focus &,
+  .example-link:active & {
+    transform: translateY(0);
+  }
+}
+
+.example-text {
+  display: block;
+  color: $cloud-light-color;
+}
+
+.example-card {
+  padding: 32px 16px;
+  border: 1px solid $cornflower-accent-color;
+  border-top: none;
+}
+
+.example-card-title {
+  @include typography(
+    $font-weight-title,
+    $font-size-title,
+    1.2,
+    $navyblue-dark-color,
+    left
+  );
+  margin-bottom: 8px;
+}
+
+.example-card-text {
+  @include typography($txtAlign: left);
+}
+
+@media screen and (min-width: $tablet) {
+  .examples {
+    padding-top: 64px;
+    padding-bottom: 48px;
+  }
+
+  .button-list {
+    flex-wrap: initial;
+    gap: 24px;
+    justify-content: center;
+    margin-bottom: 64px;
+  }
+
+  .examples-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 72px 24px;
+  }
+
+  .example-item {
+    flex-basis: calc((100% - 24px) / 2);
+  }
+}
+
+@media screen and (min-width: $desktop) {
+  .examples {
+    padding-top: 100px;
+    padding-bottom: 120px;
+  }
+
+  .button-list {
+    margin-bottom: 72px;
+  }
+
+  .examples-list {
+    gap: 48px 24px;
+  }
+
+  .example-item {
+    flex-basis: calc((100% - 2 * 24px) / 3);
+  }
+}
