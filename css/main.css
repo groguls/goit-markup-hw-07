@@ -601,7 +601,7 @@ ul {
     border-radius: 4px;
   }
   .features-item:nth-child(1)::before {
-    background-image: url(../../images/antenna.svg);
+    background-image: url(../images/antenna.svg);
   }
   .features-item:nth-child(2)::before {
     background-image: url(../../images/clock.svg);
