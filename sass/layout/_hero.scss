@@ -7,7 +7,7 @@
   padding-bottom: 112px;
   background-color: $navyblue-dark-color;
   background-image: linear-gradient($grey-hero-color, $grey-hero-color),
-    url(../../images/Dark-bg-mobile-1x-min.jpg);
+    url(../images/Dark-bg-mobile-1x-min.jpg);
 
   // background-image: image-set(
   //   "../../images/Dark-bg-mobile-1x.webp" type("image/webp") 1x,
@@ -27,7 +27,7 @@
   (min-resolution: 2dppx) {
   .hero-section {
     background-image: linear-gradient($grey-hero-color, $grey-hero-color),
-      url(../../images/Dark-bg-mobile-2x-min.jpg);
+      url(../images/Dark-bg-mobile-2x-min.jpg);
   }
 }
 
@@ -46,7 +46,7 @@
     max-width: $tablet;
     min-height: 436px;
     background-image: linear-gradient($grey-hero-color, $grey-hero-color),
-      url(../../images/Dark-bg-tablet-1x-min.jpg);
+      url(../images/Dark-bg-tablet-1x-min.jpg);
   }
 
   @media (min-device-pixel-ratio: 2),
@@ -54,7 +54,7 @@
     (min-resolution: 2dppx) {
     .hero-section {
       background-image: linear-gradient($grey-hero-color, $grey-hero-color),
-        url(../../images/Dark-bg-tablet-2x-min.jpg);
+        url(../images/Dark-bg-tablet-2x-min.jpg);
     }
   }
 
@@ -79,7 +79,7 @@
     (min-resolution: 2dppx) {
     .hero-section {
       background-image: linear-gradient($grey-hero-color, $grey-hero-color),
-        url(../../images/people-office-2x-min.jpg);
+        url(../images/people-office-2x-min.jpg);
     }
   }
 
