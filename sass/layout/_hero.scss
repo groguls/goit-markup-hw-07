@@ -1,6 +1,5 @@
 .hero-section {
-  max-width: $mobile;
-  min-height: 432px;
+  max-width: 1440px;
   margin-right: auto;
   margin-left: auto;
   padding-top: 112px;
@@ -43,8 +42,6 @@
 
 @media screen and (min-width: $tablet) {
   .hero-section {
-    max-width: $tablet;
-    min-height: 436px;
     background-image: linear-gradient($grey-hero-color, $grey-hero-color),
       url(../images/Dark-bg-tablet-1x-min.jpg);
   }
@@ -68,10 +65,10 @@
 
 @media screen and (min-width: $desktop) {
   .hero-section {
-    max-width: $desktop;
-    min-height: 600px;
+    padding-top: 188px;
+    padding-bottom: 188px;
     background-image: linear-gradient($grey-hero-color, $grey-hero-color),
-      url(../../images/people-office-1x-min.jpg);
+      url(../images/people-office-1x-min.jpg);
   }
 
   @media (min-device-pixel-ratio: 2),

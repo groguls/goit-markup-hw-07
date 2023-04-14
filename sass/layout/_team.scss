@@ -25,7 +25,8 @@
 }
 
 .team-card {
-  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08);
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
   border-radius: 0px 0px 4px 4px;
 }
 
@@ -50,13 +51,18 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 64px 24px;
+    max-width: 552px;
+    margin: 0 auto;
   }
   .team-card {
-    flex-basis: calc((100% - (2 * 108px + 24px)) / 2);
+    flex-basis: calc((100% - 24px) / 2);
   }
 }
 
 @media screen and (min-width: $desktop) {
+  .team-list {
+    max-width: 1128px;
+  }
   .team-card {
     flex-basis: calc((100% - 3 * 24px) / 4);
   }

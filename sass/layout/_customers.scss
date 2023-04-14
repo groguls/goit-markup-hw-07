@@ -3,6 +3,11 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 72px 16px;
+  max-width: 396px;
+}
+
+.customers-item {
+  flex-basis: calc((100% - 16px) / 2);
 }
 
 .company-card {
@@ -32,8 +37,23 @@
 @media screen and (min-width: $tablet) {
   .customers-list {
     gap: 72px 24px;
+    max-width: 552px;
+    margin: 0 auto;
+  }
+  .customers-item {
+    flex-basis: calc((100% - 2 * 24px) / 3);
   }
   .company-card {
     width: 168px;
   }
+}
+
+@media screen and (min-width: $desktop) {
+  .customers-list {
+    flex-wrap: unset;
+    max-width: unset;
+  }
+}
+.customers-item {
+  flex-basis: calc((100% - 5 * 24px) / 6);
 }

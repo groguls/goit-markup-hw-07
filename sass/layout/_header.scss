@@ -84,7 +84,7 @@
 
 .menu-close {
   @include close-button(
-    $bColor: $navyblue-dark-color,
+    $bColor: rgba(46, 47, 66, 0.1),
     $bgColor: rgba(231, 233, 252, 0.1)
   );
   top: 24px;
@@ -160,7 +160,7 @@
 
 .menu-social-list {
   @extend %reset-list;
-  gap: 56px;
+  justify-content: space-between;
 
   & .social {
     @include social($size: 24px);
@@ -233,6 +233,7 @@
 
   .address-link {
     @include typography($fontSize: 12px, $lineHeight: 1.17);
+    display: block;
 
     &[href^="tel"] {
       @include typography(
